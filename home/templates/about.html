@@ -1,0 +1,211 @@
+{% extends "home_base.html" %}
+
+{% block content %}
+{% load static %}
+<section class="wt-section bg-gray text-center inner-page-header">
+    <div class="container">
+        <div class="row justify-content-md-center align-items-center text-white py-4 py-lg-5">
+            <div class="col-md-7">
+                <div class="text-center">
+                    <h1 class="display-sm-4 display-lg-3">About The System</h1>
+                    <p class="sub-text">This is an application to determine the eligibility of each and every person who
+                        wishes to buy land against their name. This system is intended to eliminate the possibilities of
+                        fraud coming under land purchase.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<main role="main">
+    <div class="wt-section pb-7">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-5">
+                    <h5 class="text-primary">Read about the Land Reform history of India</h5>
+                    <h2 class="mb-4">Land Reforms (History)</h2>
+                    <p class="text-muted" style="text-align:justify;">Even before the formation of the State of Kerala, there had been endeavours at
+                        land reforms; the Restriction on Possession and Ownership of Lands Bill, 1954 , being the best
+                        example for the same. After the formation of the State of Kerala the first major achievement was
+                        the Kerala Agrarian Relations Bill, 1957 which was passed on October 15, 1960. This Act was
+                        repealed in 1961 and was substituted by The Kerala Land Reforms Act, 1963. This act had
+                        provisions relating to the fixation of ceiling on land holdings, the vesting of lands in excess
+                        of the ceiling in Government, Assignment of surplus lands, abolition of tenancy system,
+                        assignment of proprietary right on land to the cultivating tenants, the conferment of the right
+                        on Kudikidappukars to purchase land and the constitution of a Kudikidappukars Benefit Fund.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'home-assets/img/intro/land.jpg' %}" class="w-75" alt="history">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="wt-section" style="background-color: #FEFFFF" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="50">
+        <div class="container">
+            <div class="row justify-content-md-between align-items-center">
+
+                <div class="col-md-4 text-center">
+                    <img src="{% static 'home-assets/img/services/7.svg' %}" class="w-100 text-dark pr-5" width="80px" alt="" />
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex mb-md-5 rounded-md justify-content-md-between align-items-center">
+                                <img src="{% static 'home-assets/img/services/4.svg' %}" class="display-4 text-dark pr-5" width="120px"
+                                    alt="" />
+                                <div>
+                                    <h5 class="mb-2">Mission</h5>
+                                    <p class="text-muted" style="text-align:justify;">Land frauds in Kerala have been identified as an important source of
+                                        damage to Kerala’s economic balance. As per the Kerala land reforms act, 1969 there is a maximum ceiling limit of 
+                                        land area a person can own. Our mission is to ensure legal non fraudulent land purchases based on these criteria.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="d-flex mb-md-5 rounded-md justify-content-md-between align-items-center">
+                                <img src="{% static 'home-assets/img/services/6.svg' %}" class="display-4 text-dark pr-5" width="120px"
+                                    alt="" />
+                                <div>
+                                    <h5 class="mb-2">Vision</h5>
+                                    <p class="text-muted" style="text-align:justify;">To ensure secure, customer friendly land purchase elgiblity checking 
+                                        and information services. To develop our human resources, information technology and service environment so as to 
+                                        ensure improvement in service quality and value to our customers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="d-flex mb-md-5 rounded-md justify-content-md-between align-items-center">
+                                <img src="{% static 'home-assets/img/services/3.svg' %}" class="display-4 text-dark pr-5" width="120px"
+                                    alt="" />
+                                <div>
+                                    <h5 class="mb-2" style="text-align:justify;">Values</h5>
+                                    <p class="text-muted">Decades of rigorous and successive initiatives undertaken by the government of Kerala have indeed 
+                                        improvised the land registration process throughout kerala, however, a complete elimination of frauds in the land 
+                                        registry still seems a distant goal. This web application helps to detect such land frauds in kerala with an 
+                                        additional feature of digitalized cadastral map.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="wt-section" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="50">
+        <div class="container">
+            <header class="text-center w-md-50 mx-auto mb-5">
+                <h2 class="h1">Our Team</h2>
+                <p class="h5">Our Software Development Team</p>
+            </header>
+
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 mb-5">
+                    <figure>
+                        <img class="w-100 rounded-top" src="{% static 'home-assets/img/team/prof.png' %}" alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">Nisy</h5>
+                                <small
+                                    class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Developer</small>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mb-5">
+                    <figure>
+                        <img class="w-100 rounded-top" src="{% static 'home-assets/img/team/prof.png' %}" alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">Aswani</h5>
+                                <small
+                                    class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Developer</small>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mb-5">
+                    <figure>
+                        <img class="w-100 rounded-top" src="{% static 'home-assets/img/team/prof.png' %}" alt="Image Description">
+
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">Aswathy</h5>
+                                <small
+                                    class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Developer</small>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mb-5">
+                    <figure>
+                        <img class="w-100 rounded-top" src="{% static 'home-assets/img/team/prof.png' %}" alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">Gayathri</h5>
+                                <small
+                                    class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Developer</small>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="wt-section" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="50">
+        <div class="container">
+            <div class="row justify-content-md-center text-center">
+                <div class="col-md-8">
+                    <h2 class="mb-md-4">Want to know more</h2>
+                    <p class="lead text-muted">If you want to know more, Please access the below link to get the Kerala
+                        Land Reforms Acts and Regulations.</p>
+                    <div class="mt-md-3">
+                        <a href="{% url 'laws' %}" class="btn btn-primary btn-pill btn-theme">Refer the Acts and Regulations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wt-section" style="background-color: #FEFFFF">
+        <div class="container">
+            <header class="text-center w-md-50 mx-auto mb-5">
+                <h2 class="h2 mb-0">Our Features</h2>
+            </header>
+
+            <div class="js-clients wt-clients mb-4" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="50">
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/aa.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ab.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ac.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ag.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ad.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ah.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ae.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ai.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/af.jpeg' %}" alt="Image Description">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

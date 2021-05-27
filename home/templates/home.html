@@ -1,0 +1,204 @@
+{% extends "home_base.html" %}
+
+{% block content %}
+{% load static %}
+<!-- End Navbar -->
+<section class="wt-section hero-large position-relative overflow-hidden mt-md-2">
+    <div class="hero-img bg-overlay" data-overlay="0" style="background-image: url({% static 'home-assets/img/intro/5.jpg' %});"
+        data-aos="fade-right" data-aos-easing="linear" data-aos-delay="50"></div>
+    <div class="container">
+        <div class="row align-items-center my-5">
+            <div class="col-md-6 py-5" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="100">
+                <!-- heading -->
+                <h1 class="text-uppercase mb-3 display-4 font-weight-bolder">
+                    Land Search
+                </h1>
+                <p class="mb-4 h5">Welcome to our new<br><b>Land Management Application</b></p>
+                <div class=" mb-0">
+                    <!-- <a href="#" class="btn btn-pill btn-primary mr-3 mb-md-0 mb-3">
+                        Login
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Header -->
+<!-- {% static 'home-assets/css/styles.css' %} -->
+<main role="main">
+    <section class="wt-section">
+        <div class="container">
+            <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
+                <div class="col-md-8 text-center w-md-50 mx-auto mb-0 ">
+                    <h2 class="mb-md-2">Our Services</h2>
+                    <p class="lead text-muted">This application is developed to determine the eligibility to purchase
+                        Land.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="bg-white p-4 mb-4 text-center border rounded-md py-5" data-aos="fade-up"
+                        data-aos-easing="linear" data-aos-delay="50">
+                        <div class="mb-4"><img src="{% static 'home-assets/img/services/1.svg' %}" width="80px" alt="" /></div>
+                        <h5 class="mb-2">Customer Management</h5>
+                        <p class="text-muted">We can manage all costumers under a single roof. The system can store all
+                            customer details securely.</p>
+                        <a href="{% url 'services' %}" class="btn btn-pill btn-primary mt-4">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white p-4 mb-4 text-center border rounded-md py-5" data-aos="fade-up"
+                        data-aos-easing="linear" data-aos-delay="150">
+                        <div class="mb-4"><img src="{% static 'home-assets/img/services/2.svg' %}" width="80px" alt="" /></div>
+                        <h5 class="mb-2">RationCard Management</h5>
+                        <p class="text-muted">The system can organize all customers and catagorize according to to the
+                            Ration card type.</p>
+                        <a href="{% url 'services' %}" class="btn btn-pill btn-primary mt-4">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-white p-4 mb-4 text-center border rounded-md py-5" data-aos="fade-up"
+                        data-aos-easing="linear" data-aos-delay="200">
+                        <div class="mb-4"><img src="{% static 'home-assets/img/services/3.svg' %}" width="80px" alt="" /></div>
+                        <h5 class="mb-2">Revenue Details</h5>
+                        <p class="text-muted">Authorized user can store and manage all kind of Revenue transactions and
+                            manage land according to Ration card.</p>
+                        <a href="{% url 'services' %}" class="btn btn-pill btn-primary mt-4">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="wt-section" style="background-color: #FEFFFF">
+        <div class="container">
+            <div class="row justify-content-md-center text-center">
+                <div class="col-md-8" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="50">
+                    <h1 class="mb-md-4">About the System</h1>
+                    <p class="lead text-muted">This is an application to determine the eligibility of each and every
+                        person who wishes to buy land against their name. This system is intended to eliminate the
+                        possibilities of fraud coming under land purchase.</p>
+
+                    <div class="mt-md-5">
+                        <a href="{% url 'about' %}" class="btn btn-primary btn-pill">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="wt-section">
+<div class="container"> 
+<div class="row justify-content-md-center align-items-center text-center mb-lg-5 mb-4 pb-lg-5" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="50">
+    <div class="col-md-6 px-md-5"> 
+        <i class="fab fa-connectdevelop display-4 text-primary mb-4"></i> 
+        <h2 class="mb-md-4 mt-3">We are Top Consulting Firm in the World</h2>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet</p>
+        <div class="mb-md-5 mb-4">
+            <a href="#" class="btn btn-primary btn-pill">Read More</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img class="rounded mw-100" src="{% static 'home-assets/img/intro/team.jpg' %}" alt="">
+    </div>
+</div> 
+
+</div>
+</section> -->
+    <div class="card bg-primary border-0 rounded-0 p-5">
+        <div class="container">
+            <div class="row justify-content-between align-items-center text-center text-md-left" data-aos="fade-in"
+                data-aos-easing="linear" data-aos-delay="50">
+                <div class="col-md-8">
+                    <h5 class="mb-1">Everyone can request an Enquiry For Land Purchase</h5>
+                    <p class="mb-0">Users can post a request so that we can check the eligibility to purchase land. Use
+                        our online service and reduse unnecessary office visits.</p>
+                </div>
+                <div class="col-md-4 text-lg-right mt-md-0 mt-3">
+                    <a href="{% url 'enquiry' %}" class="btn btn btn-outline-light btn-pill">Enquiry</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wt-section pb-0">
+        <div class="container">
+            <div class="row justify-content-between align-items-center" data-aos="fade-right" data-aos-easing="linear"
+                data-aos-delay="50">
+                <div class="col-md-5">
+                    <h2 class="mb-4">LAND REFORMS: (HISTORY)</h2>
+                    <p class="text-muted" style="text-align:justify;">Even before the formation of the State of Kerala,
+                        there had been endeavours at land reforms; the Restriction on Possession and Ownership of Lands
+                        Bill, 1954 , being the best example for the same. After the formation of the State of Kerala the
+                        first major achievement was the Kerala Agrarian Relations Bill, 1957 which was passed on October
+                        15, 1960. This Act was repealed in 1961 and was substituted by The Kerala Land Reforms Act,
+                        1963. This act had provisions relating to the fixation of ceiling on land holdings, the vesting
+                        of lands in excess of the ceiling in Government, Assignment of surplus lands, abolition of
+                        tenancy system, assignment of proprietary right on land to the cultivating tenants, the
+                        conferment of the right on Kudikidappukars to purchase land and the constitution of a
+                        Kudikidappukars Benefit Fund.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'home-assets/img/intro/land.jpg' %}" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="wt-section bg-light">
+        <div class="container" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="50">
+            <header class="text-center w-md-50 mx-auto mb-5">
+                <h2 class="h2 mb-0">Our Features</h2>
+            </header>
+            <p class="lead text-muted" style="text-align:justify;">A critical, but often overlooked component of a successful website is its degree of usability. 
+            By considering the component, the  site must be designed as easy to read, navigate, and understand. 
+            <br><br>Some key usability elements include: </p>
+            <ul>
+                <li class="lead text-muted" style="text-align:justify;">Simplicity: The best way to keep visitors glued to the site is through valuable content, 
+                    good organization and attractive design. By taking it into account,  the site is designed 
+                    as simple and well organized.</li>
+                <li class="lead text-muted" style="text-align:justify;">Fast-loading pages: A page should load in 20 seconds or less via dial-up; by saving up the 
+                    time of visitors.</li>
+                <li class="lead text-muted" style="text-align:justify;">Minimal scroll: This is particularly implemented on the first page. Create links from the 
+                    main page to read more about a particular topic.</li>
+                <li class="lead text-muted" style="text-align:justify;">Consistent layout: Site layout is extremely important for usability. For that, a consistent 
+                    layout and repeat certain elements throughout the site.</li>
+                <li class="lead text-muted" style="text-align:justify;">Prominent, logical navigation:By placing the menu items at the top of the site, or above the 
+                    fold on either side,  we can limit the menu items to 10 or fewer. This will don't make visitors 
+                    hunt for information.</li>
+            </ul><br><br>
+
+            <div class="js-clients wt-clients mb-4" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="50">
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/aa.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ab.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ac.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ag.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ad.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ah.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ae.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/ai.jpeg' %}" alt="Image Description">
+                </div>
+                <div>
+                    <img class="wt-clients__image" src="{% static 'home-assets/img/intro/af.jpeg' %}" alt="Image Description">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

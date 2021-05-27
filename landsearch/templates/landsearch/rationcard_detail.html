@@ -1,0 +1,63 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+{% load static %}
+<div class="container-fluid bg-3 text-center">
+    <h3>Card Details</h3><br>
+    <div class="row">
+      <div class="col-xs-1 col-sm-2 col-md-3"></div>
+      <div class="col-xs-10 col-sm-10 col-md-6 {% if rationcard.Card_Type == 'y' %}css-y{% elif rationcard.Card_Type == 'p' %}css-p{% elif rationcard.Card_Type == 'b' %}css-b{% else %}css-w{% endif %}" style="border: 1px solid grey; border-radius: 8px; font-size: 20px;">
+
+        <div class="row" style="margin: 15px;">
+          <div class="col-xs-4 col-sm-4 col-md-3"></div>
+          <div class="col-xs-4 col-sm-4 col-md-6" style="align-items: center; justify-content: center;"><img src="{% static 'assets/images/logo.png' %}" style="width: 40%; height: 40%;"><div>Ration Card</div></div>
+          <div class="col-xs-4 col-sm-4 col-md-3"><img class="img-responsive" style="margin: 10px 0px 10px 0px" src="{% static 'assets/images/barcode.png' %}"></div>
+        </div>
+        <div style="height: 10px;"></div>
+
+        <div class="row" style="text-align: left;">
+          <div class="col-xs-1 col-sm-1 col-md-1"></div>
+          <div class="col-xs-5 col-sm-5 col-md-5">Card No : {{ rationcard.card_no }}<br><br>Card Type : {{rationcard.get_Card_Type_display}}</div>
+          <div class="col-xs-5 col-sm-5 col-md-5"><img style="width: 50%; height: 50%; float: right; margin: 0px 35px 0px 0px; overflow:visible;" src="{% static 'assets/images/profile.jpg' %}"></div>
+          <div class="col-xs-1 col-sm-1 col-md-1"></div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="row" style="text-align: left;">
+          <div class="col-sm-1 col-md-1"></div>
+          <div class="col-sm-5 col-md-5">Address : {{rationcard.house_name}}, {{rationcard.place}}</div>
+          <div class="col-sm-5 col-md-5">Taluk : {{rationcard.taluk}}</div>
+          <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="row" style="text-align: left;">
+          <div class="col-sm-1 col-md-1"></div>
+          <div class="col-sm-5 col-md-5">pin : {{rationcard.pin_no}}</div>
+          <div class="col-sm-5 col-md-5">District : {{rationcard.get_district_display}}</div>
+          <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <br>
+
+      </div>
+      <div class="col-xs-1 col-sm-2 col-md-3"></div>
+    </div>
+    <br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+<!--
+<h1>Card No: {{ rationcard.card_no }}</h1>
+
+<p><strong>Card Type :</strong> <span
+        class="{% if rationcard.Card_Type == 'y' %}css-y{% elif rationcard.Card_Type == 'p' %}css-p{% elif rationcard.Card_Type == 'b' %}css-b{% else %}css-w{% endif %}"
+        style="border: 1px solid black; height: 100px; width: 100px; padding: 2px;">{{rationcard.get_Card_Type_display}}</span></p>
+<p><strong>Address :</strong> {{rationcard.house_name}}, {{rationcard.place}} P.O, pin : {{rationcard.pin_no}},
+    {{rationcard.taluk}}, {{rationcard.get_district_display}}</p>
+-->

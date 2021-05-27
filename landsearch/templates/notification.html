@@ -1,0 +1,47 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1 col-sm-2 col-md-2"></div>
+        <div class="col-xs-10 col-sm-8 col-md-8">
+
+    {% if enquiry_count %}
+    {% for enq in enquiry %}
+        <div class="alert alert-info" role="alert">
+            <div class="row">
+            <div class="col-sm-3">
+                <div class="row" style="margin: 5px;"><strong sty>Card No : {{ enq.card_no }}</strong></div>
+                <div class="row" style="margin: 5px;"><strong sty>Name : {{ enq.mem_name }}</strong></div>
+                <div class="row" style="margin: 5px;"><strong sty>Land Size : {{ enq.land }}</strong></div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row" style="margin: 5px;"><strong sty>District : {{ enq.get_district_display }}</strong></div>
+                <div class="row" style="margin: 5px;"><strong sty>Land Type : {{ enq.get_land_type_display }}</strong></div>
+                <div class="row" style="margin: 5px;"><strong sty>Email id : {{ enq.email_id }}</strong></div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row" style="margin-top: 5px; text-align: right; margin-right: 6px;">Enquiry No : {{ forloop.counter }}</div>
+                <div class="row" style="margin-top: 10px; text-align: right; margin-right: 5px;"><a class="btn btn-primary" href="{% url 'disable' enq.id %}" role="button">Checked</a></div>
+
+            </div>
+            <hr>
+            
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="alert alert-warning alert-dismissible fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <b>No Enquiries!!!!</b>
+    </div>
+    {% endif %}
+
+
+
+        </div>
+        <div class="col-xs-1 col-sm-2 col-md-2"></div>
+
+
+{% endblock %}

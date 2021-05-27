@@ -1,0 +1,47 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Ration Card List</h1>
+<hr><br>
+  {% if rationcard_list %}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+          <th scope="col">#</th>
+          <th scope="col">Card No</th>
+          <th scope="col">Address</th>
+      </tr>
+  </thead>
+    {% for card in rationcard_list %}
+    <tbody>
+      <tr>
+        <td scope="row">{{ forloop.counter }}</td>
+        <td><a class="btn btn-primary" href="{{ card.get_absolute_url }}"  role="button">{{ card.card_no }}</a></td> 
+        <td>{{card.house_name}}, {{card.place}}, pin : {{card.pin_no}}, {{card.taluk}}, {{card.get_district_display}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>There are no Cards in the Database.</p>
+  {% endif %}
+  {% block pagination %}
+{% if is_paginated %}
+<div style="text-align: center;">
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+        <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a> |
+        {% endif %}
+        <span class="page-current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+        | <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endif %}
+{% endblock %}       
+{% endblock %}
+
+

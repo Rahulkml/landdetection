@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Ration Card List</h1>
+<div style="text-align: right;">
+<form class="form-inline" style="margin-right: 100px;">
+  <i id="search-icon2" class="fas fa-search" aria-hidden="true"></i>
+  <input id="user-input2" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+  </form>
+</div>
+<hr><br>
+  <div id="replaceable-content2">
+    {% include 'list/card-results-partial.html' %}
+  </div>
+  {% block pagination %}
+{% if is_paginated %}
+<div style="text-align: center;">
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+        <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a> |
+        {% endif %}
+        <span class="page-current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+        | <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endif %}
+{% endblock %}       
+{% endblock %}
+
+

@@ -1,0 +1,28 @@
+{% extends "home_base.html" %}
+
+{% block content %}
+{% load static %}
+<section class="wt-section bg-gray text-center inner-page-header">
+    <div class="container">
+        <div class="row justify-content-md-center align-items-center text-white py-4 py-lg-5">
+            <div class="col-md-7">
+                <div class="text-center">
+                    <h1 class="display-sm-4 display-lg-3">Acts/Laws</h1>
+                    <p class="sub-text">Public can refer the below document to know more about the laws regarding Land Reforms.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wt-section bg-gray pb-0 pt-1">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <!-- <embed src="{% static 'home-assets/pdf/landreform.pdf' %}" type="application/pdf" width="100%" height="1000px" /> -->
+                    <!-- <iframe src="{% static 'home-assets/pdf/landreform.pdf' %}" width="100%" height="600px"> -->
+                        <embed src="{%static 'home-assets/pdf/landreform.pdf'%}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="1000px" style="padding-bottom: 70px;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

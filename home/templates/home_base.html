@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Land Purchase Eligibility Evaluation System | Home</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+
+
+    <!-- Static Files -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'home-assets/vendors/font-awesome/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/vendors/slick-carousel/slick.css' %}">
+    <link href="{% static 'home-assets/vendors/ace-responsive-menu/ace-responsive-menu.css' %}" rel="stylesheet"
+        type="text/css" />
+    <link href="{% static 'home-assets/vendors/aos/aos.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/css/theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/css/styles.css' %}">
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+
+    <style>
+        input[type=text], select,input[type=number]  {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 2px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 50%;
+          background-color: #2B7A78;
+          color: white;
+          padding: 14px 20px;
+          margin-top: 35px;
+          margin-bottom: 8px;
+          margin-left: 25%;
+          margin-right: 25%;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: 600;
+          /* margin-top: 50px; */
+        }
+        
+        input[type=submit]:hover {
+            background-color: #154241;
+        }
+
+        label {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        /* .div-form {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+          border: 1px solid black;
+        } */
+
+        #id_active, label[for="id_active"] {
+            position: absolute;
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <h2><span>LAND</span>Search</h2>
+                </a>
+            </div>
+            <!-- Navbar -->
+            <nav class="mainNav">
+                <!-- Menu Toggle btn-->
+                <div class="menu-toggle">
+                    <h3>Menu</h3>
+                    <button type="button" id="menu-btn">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Responsive Menu Structure-->
+                <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
+                <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
+                    <li>
+                        <a href="{% url 'home' %}" class="{% if nbar == 'home' %}active{% endif %}">
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}" class="{% if nbar == 'about' %}active{% endif %}">
+                            <span class="title">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'services' %}" class="{% if nbar == 'services' %}active{% endif %}">
+                            <span class="title">Services</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'enquiry' %}" class="{% if nbar == 'enquiry' %}active{% endif %}">
+                            <span class="title">Enquiry</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'laws' %}" class="{% if nbar == 'laws' %}active{% endif %}">
+                            <span class="title">Acts/Laws</span>
+                        </a>
+                    </li>
+
+                    <!-- <li class="last ">
+                        <a href="{% url 'privacy' %}" class="{% if nbar == 'privacy' %}active{% endif %}">
+                            <span class="title">Privacy Policy</span>
+                        </a>
+                    </li> -->
+
+
+                    <li class="last ">
+                        <a href="{% url 'contact' %}" class="{% if nbar == 'contact' %}active{% endif %}">
+                            <span class="title">Contact Us</span>
+                        </a>
+                    </li>
+
+                    <li class="last">
+                        <a style="padding: 20px 0 20px 0; margin-left: 10px;"><input type="button" value="Login" class="btn btn-primary" onClick="parent.location='{% url 'login' %}'"></a>
+                        <!-- <a href="#" class="btn btn-primary">Login</a> -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div>{% block content %}{% endblock %}</div>
+
+
+    <!-- Footer -->
+    <footer class="wt-section bg-dark main-footer">
+        <div class="container">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4 col-12 col mb-4">
+                    <h5 class="mb-4">Reach us</h5>
+
+                    <p><i class="fa fa-location-arrow mr-2"></i> State IT Cell</p>
+                    <p><i class="fa fa-phone mr-2"></i> +91-854-761-0009 </p>
+                    <p><i class="fa fa fa-envelope mr-2"></i> stateitcell@gmail.com </p>
+
+                </div>
+
+
+                <div class="col-sm-4 col-md  col-6 col mb-4">
+                    <h5 class="mb-4">Site links</h5>
+
+                    <ul class="list-inline">
+                        <li class="list-block-item mx-2"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="list-block-item mx-2"><a href="{% url 'about' %}">About Us</a></li>
+                        <li class="list-block-item mx-2"><a href="{% url 'services' %}">Services</a></li>
+                        <li class="list-block-item mx-2"><a href="{% url 'enquiry' %}">Enquiry</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="col-sm-4 col-md  col-6 col mb-4">
+                    <h5 class="mb-4">Quick links</h5>
+
+                    <ul class="list-inline">
+                        <li class="list-block-item mx-2"><a href="{% url 'contact' %}">Contact Us</a></li>
+                        <li class="list-block-item mx-2"><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="col-sm-4 col-md  col-12 col mb-4">
+                    <h5 class="mb-4">Follow us</h5>
+                    <ul class="social_footer_ul list-inline text-left mb-0">
+                        <li class="list-inline-item mx-2"><a href="https://www.facebook.com/KeralaRevenueDepartment/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item mx-2"><a href="https://twitter.com/iprdkerala"><i class="fab fa-twitter"></i></a></li>
+                        <!-- <li class="list-inline-item mx-2"><a href="#"><i class="fab fa-linkedin"></i></a></li> -->
+                        <li class="list-inline-item mx-2"><a href="https://www.instagram.com/iprdkerala/"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pt-4">
+
+                    <p class="text-center copyrights"><a class="text-white" href="#">Developed By GANA</a> <br>2021© All
+                        Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- JS Script Files -->
+    <!-- Global Vendor -->
+    <script src="{% static 'home-assets/vendors/jquery.min.js' %}"></script>
+    <script src="{% static 'home-assets/vendors/jquery.migrate.min.js' %}"></script>
+    <script src="{% static 'home-assets/vendors/popper.min.js' %}"></script>
+    <script src="{% static 'home-assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home-assets/vendors/aos/aos.js' %}"></script>
+
+    <!-- Components Vendor  -->
+    <script src="{% static 'home-assets/vendors/slick-carousel/slick.min.js' %}"></script>
+    <script src="{% static 'home-assets/vendors/ace-responsive-menu/ace-responsive-menu.js' %}"></script>
+
+    <!--Plugin Initialize-->
+    <script src="{% static 'home-assets/js/global.js' %}"></script>
+    <script src="{% static 'home-assets/vendors/carousel.js' %}"></script>
+
+    <!-- {% block footer %}
+        <script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>
+    {% endblock %} -->
+
+
+</body>
+
+</html>

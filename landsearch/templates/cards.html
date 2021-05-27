@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}	
+<h3 style="text-align: center;">Search Member</h3>
+<hr>
+<div class="row" style="height: 100%;">
+	<div class="col-sm-6 align-left">
+		<form class="form-inline">
+		<i id="search-icon" class="fas fa-search" aria-hidden="true"></i>
+		<input id="user-input" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+		</form>
+	</div>
+
+	<div class="col-sm-6" style="border-left: 1px solid black; height: 100%;">
+	<div id="replaceable-content">
+		{% include 'cards-results-partial.html' %}
+	</div>
+</div>
+</div>
+<br>
+<br>
+{% endblock %}

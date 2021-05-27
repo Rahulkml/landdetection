@@ -1,0 +1,60 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+<h3 style="text-align: center;"><b>{{ name }}</b>'s Revenue Details</h3>
+<hr>
+<br>
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+    <div style="text-align: center;">
+        {% if revenuedetails %}
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Land</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Land Type</th>
+                </tr>
+            </thead>
+            {% for revenuedetail in revenuedetails %}
+            <tr>
+                <th scope="row">{{ forloop.counter  }}</th>
+                <th>{{ revenuedetail.land }} Acres</th>
+                <th>{{ revenuedetail.get_district_display }}</th>
+                <th>{{ revenuedetail.get_land_type_display }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>No Records Found!</strong>
+        </div>
+        {% endif %}
+    </div>
+    <hr>
+    <h4 style="text-align: center;"><b>Check Eligibility</h4>
+    <form action="{% url 'verify' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="pk" required="" id="id_pk" value="{{ pk }}">
+        <div class="form-group form-control" style="height: 220px;">
+            <br>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+            <b>Enter the size of land to buy:</b>
+            {{ form.land }}<br><br>
+            <b>Select the type of land:</b><br>
+            {{ form.land_type }}<br><br>
+            <input class="btn btn-success" type="submit" value="check">
+            </div>
+            <div class="col-sm-5">
+                <b>Select The district:</b>
+                {{ form.district }}<br><br>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </form>
+
+
+{% endblock %}

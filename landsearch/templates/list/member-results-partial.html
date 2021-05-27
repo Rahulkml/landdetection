@@ -1,0 +1,27 @@
+{% if c.customers %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Card No</th>
+            <th scope="col">Relation</th>
+            <th scope="col">Age</th>
+        </tr>
+    </thead>
+    {% for customer in c.customers %}
+    <tbody>
+        <tr>
+            <td scope="row" style="vertical-align: middle;">{{ forloop.counter }}</td>
+            <td><a class="btn btn-primary" href="{{ customer.get_absolute_url }}" role="button">{{ customer.name }}</a></td>
+            <td><a class="btn btn-info" href="{{ customer.card.get_absolute_url }}" role="button">{{ customer.card }}</a>
+            </td>
+            <td style="vertical-align: middle;">{{ customer.relation }}</td>
+            <td style="vertical-align: middle;">{{ customer.age }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are no Members in the Database.</p>
+{% endif %}

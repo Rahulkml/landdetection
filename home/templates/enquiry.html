@@ -1,0 +1,33 @@
+{% extends "home_base.html" %}
+
+{% block content %}
+{% load static %}
+<section class="wt-section">
+    <div class="container">
+        <div class="row justify-content-md-center align-items-center">
+            <div class="col-md-7">
+                <div class="text-center">
+                    <h1 class="display-sm-4 display-lg-3">Enquiry</h1>
+                    <p class="sub-text">Public can post an enquiry to check details of land purchase.</p>
+                    
+                    <form action = "" method = "post" style="text-align: left; color: black;">
+                        {% csrf_token %}
+                        <!-- <input type="number" name="active" value="1" required id="id_active">
+                        <input type="text" name="card_no" maxlength="20" required id="id_card_no">
+                        <input type="text" name="mem_name" maxlength="200" required id="id_mem_name"> -->
+                        {{ form.as_table }}
+                        <!-- <b>Card No</b> : {{ form.card_no }}<br>
+                        <b>Member Name</b> : {{ form.mem_name }}<br>
+                        <b>Land Size</b> : {{ form.land }}<br>
+                        <b>District</b> : {{ form.district }}<br>
+                        <b>Land Type</b> : {{ form.land_type }}<br>
+                        <b>Email ID</b> : {{ form.email_id }}<br> -->
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

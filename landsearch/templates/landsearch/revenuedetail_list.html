@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Revenue Details List</h1>
+<hr><br>
+{% if revenuedetail_list %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Land Size</th>
+            <th scope="col">District</th>
+            <th scope="col">Land Type</th>
+        </tr>
+    </thead>
+    {% for revenuedetail in revenuedetail_list %}
+    <tbody>
+        <tr>
+            <td scope="row" style="vertical-align: middle;">{{ forloop.counter }}</td>
+            <td><a class="btn btn-primary" href="{% url 'customer-detail' pk=revenuedetail.name_id %}" role="button">{{ revenuedetail.name.name }}</a></td>
+            <td style="vertical-align: middle;">{{ revenuedetail.land }} Acres</td>
+            <td style="vertical-align: middle;">{{ revenuedetail.get_district_display }}</td>
+            <td style="vertical-align: middle;">{{ revenuedetail.get_land_type_display }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are no Data in the Database.</p>
+{% endif %}
+{% block pagination %}
+{% if is_paginated %}
+<div style="text-align: center;">
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+        <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a> |
+        {% endif %}
+        <span class="page-current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+        | <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endif %}
+{% endblock %}
+{% endblock %}

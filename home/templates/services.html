@@ -1,0 +1,57 @@
+{% extends "home_base.html" %}
+
+{% block content %}
+{% load static %}
+<section class="wt-section bg-gray text-center inner-page-header">
+    <div class="container">
+        <div class="row justify-content-md-center align-items-center text-white py-4 py-lg-5">
+            <div class="col-md-7">
+                <div class="text-center">
+                    <h1 class="display-sm-4 display-lg-3">About The System</h1>
+                    <p class="sub-text">This is an application to determine the eligibility of each and every person who
+                        wishes to buy land against their name. This system is intended to eliminate the possibilities of
+                        fraud coming under land purchase.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<main role="main">
+
+    <section class="wt-section">
+        <div class="container">
+            <header class="w-md-50 mx-auto mb-5">
+                <h2 class="h1 text-center">Our Services</h2><br>
+                <p class="h5" style="text-align: justify;">Land security is a principle and critical factor in providing social and political stability. Secure land is one of mankind’s most basic needs, and is a major contributor to the 
+                    economic and cultural development of civilizations. To enhance land  security and 
+                    property ownership, research has been growing.
+                    <br><br>
+                    We provide a user friendly portal for the public to access all the land legislation laws and informations related to Kerala Land reforms act.
+                    <br><br>
+                    Enquiries related to the department can be submitted through our portal. Along with that the users can comment their feedbacks. 
+                    <br><br>
+                    We provide an additional feature of digitalized cadastral map. A cadastral map is a comprehensive land recording of the real estate or real property's metes-and-bounds of a country.
+                    The main objective of this portal is to check the eligibility of every individual who is trying to buy land and hence prevent fraud, afford facility for ascertaining whether a property is governments surplus land or not.
+                    <br><br>
+                    Details regarding owned land, ration card and members list can be viewed by the officials through this portal. Eligibility to buy land can be checked through the portal in a secure manner.</p>
+            </header>
+
+
+
+    <section class="wt-section" style="background-color: #FEFFFF">
+        <div class="container">
+            <div class="row justify-content-md-center text-center">
+                <div class="col-md-8">
+                    <h2 class="mb-md-4">Want to know more</h2>
+                    <p class="lead text-muted">If you want to know more, Please access the below link to get the Kerala
+                        Land Reforms Acts and Regulations.</p>
+                    <div class="mt-md-3">
+                        <a href="{% url 'laws' %}" class="btn btn-primary btn-pill btn-theme">Refer the Acts and Regulations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1 col-sm-3 col-md-3"></div>
+        <div class="col-xs-10 col-sm-6 col-md-6">
+
+{% if message %}
+    <div class="alert alert-warning alert-dismissible fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <b>Dear, {{ name }} {{ message }}</b>
+    </div>
+    
+{% else %}
+    {% if flag %}
+        <div class="alert alert-success alert-dismissible fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <b>{{ name }} is Eligible to Buy {{ land }} Acres of type : {{ land_type_pass }} Land</b>
+        </div>
+
+    {% else %}
+        <div class="alert alert-danger alert-dismissible fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <b>{{ name }} is Not Eligible to Buy {{ land }} Acres of type : {{ land_type_pass }}</b>
+        </div>
+        
+    {% endif %}
+
+{% endif %}
+
+        </div>
+        <div class="col-xs-1 col-sm-3 col-md-3"></div>
+
+
+{% endblock %}

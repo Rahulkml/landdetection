@@ -1,0 +1,50 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Members List</h1>
+<hr><br>
+{% if fammember_list %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Card No</th>
+            <th scope="col">Relation</th>
+            <th scope="col">Age</th>
+        </tr>
+    </thead>
+    {% for member in fammember_list %}
+    <tbody>
+        <tr>
+            <td scope="row" style="vertical-align: middle;">{{ forloop.counter }}</td>
+            <td><a class="btn btn-primary" href="{{ member.get_absolute_url }}" role="button">{{ member.name }}</a></td>
+            <td><a class="btn btn-info" href="{{ member.card.get_absolute_url }}" role="button">{{ member.card }}</a>
+            </td>
+            <td style="vertical-align: middle;">{{ member.relation }}</td>
+            <td style="vertical-align: middle;">{{ member.age }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are no Members in the Database.</p>
+{% endif %}
+{% block pagination %}
+{% if is_paginated %}
+<div style="text-align: center;">
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+        <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a> |
+        {% endif %}
+        <span class="page-current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+        | <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endif %}
+{% endblock %}
+{% endblock %}

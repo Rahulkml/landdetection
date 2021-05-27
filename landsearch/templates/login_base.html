@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Land Purchase Eligibility Evaluation System | Home</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+
+
+    <!-- Static Files -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'home-assets/vendors/font-awesome/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/vendors/slick-carousel/slick.css' %}">
+    <link href="{% static 'home-assets/vendors/ace-responsive-menu/ace-responsive-menu.css' %}" rel="stylesheet"
+        type="text/css" />
+    <link href="{% static 'home-assets/vendors/aos/aos.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/css/theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home-assets/css/styles.css' %}">
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+
+</head>
+
+<body>
+    <div class="bg-gray">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <h2><span>LAND</span>Search</h2>
+                </a>
+            </div>
+            <!-- Navbar -->
+            <nav class="mainNav">
+                <!-- Menu Toggle btn-->
+                <div class="menu-toggle">
+                    <h3>Menu</h3>
+                    <button type="button" id="menu-btn">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Responsive Menu Structure-->
+                <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
+                <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
+                    <li>
+                        <a href="{% url 'home' %}">
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">
+                            <span class="title">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'services' %}">
+                            <span class="title">Services</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'enquiry' %}">
+                            <span class="title">Enquiry</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'laws' %}">
+                            <span class="title">Acts/Laws</span>
+                        </a>
+                    </li>
+
+
+                    <li class="last ">
+                        <a href="{% url 'contact' %}">
+                            <span class="title">Contact Us</span>
+                        </a>
+                    </li>
+
+                    <li class="last">
+                        <a style="padding: 20px 0 20px 0; margin-left: 10px;"><input type="button" value="Login" class="btn btn-primary" onClick="parent.location='{% url 'login' %}'"></a>
+                        <!-- <a href="#" class="btn btn-primary">Login</a> -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div>{% block content %}{% endblock %}</div>
+    <div style="text-align: center;"><p class="lead text-muted" style="font-size: small;">2021© All Rights Reserved</p></div>
+    <!-- {% block footer %}
+        <script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>
+    {% endblock %} -->
+</div>
+
+</body>
+
+</html>

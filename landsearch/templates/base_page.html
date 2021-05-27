@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block title %}<title>Land Search</title>{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- JQuery CDN -->
+    {% load static %}
+    <script src="{% static 'assets/js/jquery-3.4.1.min.js' %}"></script>
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" media="screen">
+
+
+    <style type="text/css">
+        .box {
+            background-color: pink;
+            border: 15px solid #e8eae6;
+            border-radius: 25px;
+            height: 200px;
+            padding: 30px;
+        }
+
+        .body1 {
+            background-color: #e8eae6;
+        }
+
+        .css-y {
+            background-color: #f0e68c;
+        }
+
+        .css-p {
+            background-color: pink;
+        }
+
+        .css-b {
+            background-color: #89CFF0;
+        }
+
+        .css-w {
+            background-color: white;
+        }
+
+        .glyphicon {
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        small {
+            display: block;
+            line-height: 1.428571429;
+            color: #999;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .notification {
+            color: white;
+            text-decoration: none;
+            padding: 15px 26px;
+            position: relative;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .notification .badge {
+            position: absolute;
+            top: 4px;
+            right: -1px;
+            padding: 4px 5px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'index' %}"><b>Land Management</b></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="{% if nbar == 'dashboard' %}active{% endif %}"><a href="{% url 'index' %}">Dashboard</a></li>
+                <li class="{% if c.nbar == 'card' %}active{% endif %}"><a href="{% url 'cards' %}">Cards</a></li>
+                <li class="{% if c.nbar == 'member' %}active{% endif %}"><a href="{% url 'customers' %}">Members</a></li>
+                <li class="{% if revenuedetail_list %}active{% endif %}"><a href="{% url 'revenue' %}">Revenue Details</a></li>
+                <li class="{% if c.nbar == 'search' %}active{% endif %}"><a href="{% url 'search' %}">Check Eligibility</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'notifications' %}" class="notification">
+                        <span>Enquiry</span>
+                        <span class="badge">{{ enquiry_count }} {{ c.enquiry_count }}</span>
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'admin:index' %}"><span class="glyphicon glyphicon-user"></span>{{ user.get_username }}</a></li>
+                <li><a href="{% url 'log-out' %}"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="col-sm-12 ">{% block content %}{% endblock %}</div>
+
+
+</body>
+
+</html>
